@@ -1,5 +1,5 @@
+//Counting whether all vowels are present in the string
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int main()
@@ -8,25 +8,24 @@ int main()
     cin >> n;
     string st;
     cin >> st;
-    vector<int> vec(5,0);
+    set<char>s;
     for(int i=0;i<st.length();i++){
         if(st[i]=='a')
-            vec[0] = 1;
+            s.insert('a');
         else if(st[i]=='e')
-            vec[1] = 1;
+            s.insert('e');
         else if(st[i]=='i')
-            vec[2] = 1;
+            s.insert('i');
         else if(st[i]=='o')
-            vec[3] = 1;
+            s.insert('o');
         else if(st[i]=='u')
-            vec[4] = 1;
+            s.insert('u');
     }
-    for(int i=0;i<5;i++){
-        if(vec[i] == 0) {
-            cout << "NO" << endl;
-            return 0;
-        }
-    }
-    cout << "YES" << endl;
+	
+    if(s.size()==5)
+    	cout << "YES" << endl;
+    else
+	cout << "NO" << endl;
+
 	return 0;
 }
